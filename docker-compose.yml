@@ -12,6 +12,7 @@ services:
       # For testing purposes
       LETSENCRYPT_TEST: "true"
 
+  # doc: https://github.com/jwilder/nginx-proxy
   nginx-proxy:
     image: jwilder/nginx-proxy
     ports:
@@ -23,6 +24,7 @@ services:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
       - "/path/to/etc/nginx/certs:/etc/nginx/certs"
 
+  # doc: https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion
   letsencrypt-nginx-proxy-companion:
     image: jrcs/letsencrypt-nginx-proxy-companion
     volumes:
